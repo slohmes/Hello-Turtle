@@ -1,55 +1,147 @@
 # drawing out a hello world with the python turtle library!
-# extension: different modules for each turtle so letter color, etc. can be easily changed.
-
-# TODO: fix angle errors, draw the rest of the letters
 
 import turtle
+
 wn = turtle.Screen()
 h = turtle.Turtle()
+r = 30 # radius value: use to easily adjust word size
 
-# move module to the left side of the screen
+
+# TODO make it so it will run through a string and draw it out
+
+
+# all drawLetter functions need to start and end facing right.
+
+
+# function to move to next letter
+def nextLetter():
+	h.penup()
+	h.forward(r)
+	h.pendown()
+
+
+def drawH():
+	h.left(90)
+	h.forward(2*r)
+	h.forward(-1*r)
+	h.right(90)
+	h.forward(r)
+	h.right(90)
+	h.forward(r)
+	h.left(90)
+	nextLetter()
+
+
+def drawE():
+	h.penup()
+	h.left(90)
+	h.forward(r/2)
+	h.right(90)
+	h.pendown()
+	
+	h.forward(r)
+	h.left(90)
+	h.forward(r/2)
+	h.left(90)
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	nextLetter()
+
+
+def drawL():
+	h.left(90)
+	h.forward(2*r)
+	h.forward(-2*r)
+	h.right(90)
+	nextLetter()
+
+
+def drawO():
+	i=0
+	while i<=4:
+		h.forward(r)
+		h.left(90)
+		i+=1
+	h.right(90)
+	nextLetter()
+
+
+def drawW():
+	h.penup()
+	h.left(90)
+	h.forward(r)
+	h.left(180)
+	h.pendown()
+	
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	h.forward(-1*r)
+	h.right(90)
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	h.forward(-1*r)
+	h.right(90)	
+	nextLetter()
+
+
+def drawR():
+	h.left(90)
+	h.forward(r)
+	h.right(90)
+	h.forward(r)
+	
+	h.penup()
+	h.right(90)
+	h.forward(r)
+	h.left(90)
+	nextLetter()
+
+def drawD():
+	h.penup()
+	h.forward(r)
+	h.left(90)
+	h.forward(r)
+	h.left(90)
+	h.pendown()
+	
+	i = 1
+	while i<4:
+		h.forward(r)
+		h.left(90)
+		i+=1
+	h.forward(2*r)
+	h.forward(-2*r)
+	h.right(90)
+	nextLetter()
+
+
+
+
+
+
+# main
+
 h.penup()
-h.forward(-240)
+h.forward(-270) # get the turtle to the right start place!
 h.pendown()
 
-
-# draw the H
-h.left(90)
-h.forward(120)
-h.penup()
-h.forward(-60)
-h.right(90)
-h.pendown()
-
-i = 0
-while (i<90):
-	h.forward(1)
-	h.right(2)
-	i+=2
-
-h.right(1)
-h.forward(30)
-
-
-#draw the E
-
-h.penup()
-h.left(90)
-h.forward(15)
-h.left(90)
-h.forward(30)
-h.right(90)
-h.pendown()
-
-h.forward(60)
-h.left(90)
-
-i=0
-while (i<315):
-	h.forward(1)
-	h.left(2)
-	i+=2
-
-
+drawH()
+drawE()
+drawL()
+drawL()
+drawO()
+nextLetter()
+drawW()
+drawO()
+drawR()
+drawL()
+drawD()
 
 wn.exitonclick()
