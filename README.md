@@ -3,4 +3,4 @@ A program that uses Python's turtle library to draw the words "hello world" on t
 
 Possible extension: different modules for each turtle so letter color, etc. can be easily changed.
 
-TODO: fix angle errors, draw the rest of the letters
+Could also be extended to write out all letters in the alphabet and even punctuation!
